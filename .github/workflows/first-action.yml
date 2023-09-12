@@ -1,0 +1,23 @@
+name: "My First CI(Continuos integration): primary action"
+
+on:
+  push: branches:["main"]
+  pull_request: branches:["main"]
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      # A palavra-chave uses especifica que esta etapa executará v3 da ação actions/checkout.
+      # Esta é uma ação que faz o check-out do seu repositório para o executor,
+      # permitindo que você execute scripts ou outras ações com base no seu código
+      # (como ferramentas de compilação e teste). Você deve usar a ação de checkout sempre que o fluxo de trabalho
+      # for executado no código do repositório.
+      - uses: actions/checkout@v3
+
+      - name: run a one-line script
+        run: echo Hello, world!
+
+      - name: run a list file
+        run: ls -la
+
