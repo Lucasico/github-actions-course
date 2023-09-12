@@ -1,8 +1,10 @@
 name: "My First CI(Continuos integration): primary action"
 
 on:
-  push: branches:["main"]
-  pull_request: branches:["main"]
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 jobs:
   example-job:
@@ -20,4 +22,3 @@ jobs:
 
       - name: run a list file
         run: ls -la
-
